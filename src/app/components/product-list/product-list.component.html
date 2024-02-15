@@ -1,0 +1,29 @@
+<div class="my-5">
+  <!-- Filering and Searching -->
+  <app-search (searching)="onSearching($event)"></app-search>
+  <app-filter
+    (changedAvilabilitySelector)="onFilterAvilability($event)"
+    [numOfProducts]="numOfProducts"
+  ></app-filter>
+
+  <!-- All Components -->
+  <ng-container *ngIf="filteredProducts.length; else notFound">
+    <div class="row mt-3">
+      <app-product
+        class="col-6 col-md-4 col-xl-3 cursor-pointer"
+        *ngFor="let item of filteredProducts"
+        [product]="item"
+        (click)="selectedProduct = item"
+      ></app-product>
+    </div>
+  </ng-container>
+
+  <!-- If product not found -->
+  <ng-template #notFound>
+    <p class="h1 text-center text-secondary my-5">Not Found</p>
+  </ng-template>
+
+  <!-- Details of component -->
+
+  <app-product-details [productDetails]="selectedProduct"></app-product-details>
+</div>

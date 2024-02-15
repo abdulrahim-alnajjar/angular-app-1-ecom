@@ -1,0 +1,43 @@
+<div
+  class="card border-0 mb-3"
+  data-bs-toggle="modal"
+  data-bs-target="#product-details"
+>
+  <img
+    [src]="product.images[0]"
+    class="card-img"
+    style="height: 150px"
+    alt=""
+  />
+
+  <div class="card-body px-0 pt-1 fw-bold">
+    <h5 class="card-title h5 flex-fill text-capitalize">
+      {{ product.name | stringlength : 22
+      }}<span *ngIf="product.name.length >= 22">...</span>
+    </h5>
+
+    <div class="d-flex gap-2">
+      <span class="card-text text-decoration-line-through">
+        {{ product.price + (product.price * 25) / 100 }}$
+      </span>
+      <span class="card-text">{{ product.price }}$</span>
+    </div>
+
+    <p
+      class="card-text mb-1"
+      [ngStyle]="{ color: product.stock ? 'green' : 'red' }"
+    >
+      {{ product.stock ? "In Stock" : "Out of Stock" }}
+      ({{ product.stock }})
+    </p>
+
+    <p class="card-text">
+      <span
+        class="badge rounded-pill text-capitalize me-1"
+        [ngStyle]="{ background: c }"
+        *ngFor="let c of product.color"
+        >{{ c }}</span
+      >
+    </p>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<!-- panner -->
+<div class="card text-bg-dark border-0 mb-5 rounded-0">
+  <img
+    src="https://picsum.photos/700/450"
+    class="card-img opacity-25 baner rounded-0"
+    alt="..."
+  />
+  <div
+    class="container card-img-overlay d-flex flex-column justify-content-center"
+  >
+    <p class="card-title h1 fw-bold w-75">Welcome to Our Stock</p>
+    <p class="card-text">You will find happiness here</p>
+    <div class="d-flex gap-2">
+      <a href="#product-list" class="btn btn-primary"
+        >Take a Tour <span class="emoji">🛒</span></a
+      >
+      <a href="#discounts-most-selling" class="btn btn-outline-warning"
+        >New Discounts <span class="emoji">🛍️</span></a
+      >
+    </div>
+  </div>
+</div>
+
+<!-- List of Products -->
+<div class="container my-4">
+  <app-product-list id="product-list"></app-product-list>
+</div>
+
+<!-- Discounts & Most selling slider -->
+<div class="bg-primary-subtle py-4 my-4">
+  <div class="container">
+    <div
+      class="row my-5 flex-column flex-md-row align-items-center text-center text-md-start"
+    >
+      <div class="col-12 col-md-6">
+        <p class="h1">Discounts & Most Selling</p>
+        <p>
+          Browse the products most requested by visitors, and enjoy your time.
+        </p>
+      </div>
+      <app-slider
+        class="col-12 col-md-6"
+        id="discounts-most-selling"
+      ></app-slider>
+    </div>
+  </div>
+</div>
+
+<!-- Brands -->
+<div class="container py-4 my-4">
+  <p class="h1 text-center">Brands</p>
+  <div class="row my-5">
+    <div
+      class="col-12 col-md-6 col-xl-4 mb-3 mx-auto"
+      *ngFor="let item of ['1', '2', '3']"
+    >
+      <div class="card border-0 text-center w-50 mx-auto">
+        <img
+          [src]="'https://picsum.photos/50' + item"
+          class="card-img rounded-pill shadow cursor-pointer"
+        />
+        <div class="card-body">
+          <p class="card-title">Brand Name</p>
+          <p class="card-text">Lorem, ipsum dolor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

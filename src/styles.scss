@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+/** Global */
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  object-fit: cover;
+}
+a {
+  text-decoration: none;
+}
+.emoji {
+  font-family: "Noto Color Emoji", sans-serif !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+@media (min-width: 568px) {
+  .baner {
+    height: 450px;
+  }
+}

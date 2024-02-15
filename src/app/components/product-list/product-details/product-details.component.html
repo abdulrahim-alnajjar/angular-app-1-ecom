@@ -1,0 +1,98 @@
+<div
+  class="modal fade mt-2"
+  id="product-details"
+  tabindex="-1"
+  aria-labelledby="productDetails-details-modalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title text-capitalize">
+          {{ productDetails.name }}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body pt-0">
+        <div class="card border-0">
+          <div class="card-body fw-bold px-0">
+            <div class="d-flex gap-2">
+              <p
+                class="card-text flex-fill"
+                [ngStyle]="{ color: productDetails.stock ? 'green' : 'red' }"
+              >
+                {{ productDetails.stock ? "In Stock" : "Out of Stock" }}
+                ({{ productDetails.stock }})
+              </p>
+
+              <p class="text-decoration-line-through">
+                {{ productDetails.price + (productDetails.price * 25) / 100 }}$
+              </p>
+
+              <p class="card-text">{{ productDetails.price }}$</p>
+            </div>
+
+            <p class="card-text text-capitalize">
+              From: {{ productDetails.brand }}
+            </p>
+            <p class="card-text">
+              <span
+                class="badge rounded-pill text-capitalize me-1"
+                [ngStyle]="{ background: c }"
+                *ngFor="let c of productDetails.color"
+                >{{ c }}</span
+              >
+            </p>
+          </div>
+
+          <!-- images slider -->
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div
+                *ngFor="let img of productDetails.images"
+                class="carousel-item active"
+              >
+                <img [src]="img" class="d-block w-100 rounded" alt="..." />
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <p class="card-text mt-3">
+          <span class="fw-bold">Details: </span> {{ productDetails.details }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
