@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Vars } from '../../services/vars.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +7,4 @@ import { Vars } from '../../services/vars.service';
   imports: [RouterLink],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent {
-  logo: string = new Vars().logo;
-}
+export class HeaderComponent {}
