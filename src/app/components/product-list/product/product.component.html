@@ -5,15 +5,14 @@
 >
   <img
     [src]="product.images[0]"
-    class="card-img"
+    class="card-img animate__zoom"
     style="height: 150px"
     alt=""
   />
 
   <div class="card-body px-0 pt-1 fw-bold">
-    <h5 class="card-title h5 flex-fill text-capitalize">
-      {{ product.name | stringlength : 22
-      }}<span *ngIf="product.name.length >= 22">...</span>
+    <h5 class="card-title h5 flex-fill">
+      {{ product.name | titlecase }}
     </h5>
 
     <div class="d-flex gap-2">

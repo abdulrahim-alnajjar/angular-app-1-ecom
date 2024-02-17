@@ -1,1 +1,8 @@
-
+.brands {
+  svg:hover {
+    * {
+      fill: #0d6efd !important;
+      transition: 0.2s;
+    }
+  }
+}

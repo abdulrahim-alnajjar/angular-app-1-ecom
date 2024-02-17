@@ -22,7 +22,7 @@
 </div>
 
 <!-- List of Products -->
-<div class="container my-4">
+<div class="overflow-hidden container my-4">
   <app-product-list id="product-list"></app-product-list>
 </div>
 
@@ -392,14 +392,14 @@
 </div>
 
 <!-- Brands -->
-<div class="container py-4 my-4">
+<div class="container py-4 my-4 brands">
   <p class="h1 text-center">Brands</p>
   <div class="row my-5">
     <!-- adidas -->
-    <div class="col-12 col-md-4 col-xl-2 mb-3 mx-auto">
+    <div class="col-6 col-md-4 col-xl-2 mb-3 mx-auto">
       <div class="card border-0 text-center w-50 mx-auto">
         <svg
-          class="mx-auto"
+          class="mx-auto animate__zoom"
           fill="currentColor"
           width="50"
           height="50"
@@ -422,10 +422,10 @@
       </div>
     </div>
     <!-- nike -->
-    <div class="col-12 col-md-4 col-xl-2 mb-3 mx-auto">
+    <div class="col-6 col-md-4 col-xl-2 mb-3 mx-auto">
       <div class="card border-0 text-center w-50 mx-auto">
         <svg
-          class="mx-auto"
+          class="mx-auto animate__zoom"
           fill="currentColor"
           width="50"
           height="50"
@@ -442,11 +442,11 @@
       </div>
     </div>
     <!-- HUAWEI -->
-    <div class="col-12 col-md-4 col-xl-2 mb-3 mx-auto">
+    <div class="col-6 col-md-4 col-xl-2 mb-3 mx-auto">
       <div class="card border-0 text-center w-50 mx-auto">
         <svg
           viewBox="0 0 24 24"
-          class="mx-auto"
+          class="mx-auto animate__zoom"
           fill="currentColor"
           width="50"
           height="50"
@@ -477,11 +477,11 @@
       </div>
     </div>
     <!-- hp -->
-    <div class="col-12 col-md-4 col-xl-2 mb-3 mx-auto">
+    <div class="col-6 col-md-4 col-xl-2 mb-3 mx-auto">
       <div class="card border-0 text-center w-50 mx-auto">
         <svg
           viewBox="0 0 40 40"
-          class="mx-auto"
+          class="mx-auto animate__zoom"
           fill="currentColor"
           width="50"
           height="50"
@@ -499,11 +499,11 @@
       </div>
     </div>
     <!-- fila -->
-    <div class="col-12 col-md-4 col-xl-2 mb-3 mx-auto">
+    <div class="col-6 col-md-4 col-xl-2 mb-3 mx-auto">
       <div class="card border-0 text-center w-50 mx-auto">
         <svg
           viewBox="0 0 40 40"
-          class="mx-auto"
+          class="mx-auto animate__zoom"
           fill="currentColor"
           width="50"
           height="50"
@@ -542,7 +542,7 @@
 </div>
 
 <!-- statistics -->
-<div class="bg-primary-subtle py-5 mt-5">
+<div class="bg-primary-subtle py-5 mt-5" #statistics>
   <div class="container py-4">
     <div class="row">
       <!-- left box -->
@@ -558,10 +558,8 @@
       <div class="col-12 col-md-8">
         <div class="row">
           <!-- Stat...1 -->
-          <div class="col-12 col-md-6 mb-3">
-            <div
-              class="d-flex justify-content-center justify-content-md-start align-items-center gap-2 ms-2 ms-md-5"
-            >
+          <div class="col-6 mb-3">
+            <div class="d-flex align-items-center gap-2">
               <!-- icon -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -577,16 +575,16 @@
               </svg>
               <!-- number -->
               <div class="">
-                <p class="card-title h2">2,267,542</p>
+                <p class="card-title h3">
+                  {{ cutomerCount | number }}
+                </p>
                 <small class="card-text text-body-secondary">Customer</small>
               </div>
             </div>
           </div>
           <!-- Stat...2 -->
-          <div class="col-12 col-md-6 mb-3">
-            <div
-              class="d-flex justify-content-center justify-content-md-start align-items-center gap-2 ms-2 ms-md-5"
-            >
+          <div class="col-6 mb-3">
+            <div class="d-flex align-items-center gap-2">
               <!-- icon -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -602,16 +600,14 @@
               </svg>
               <!-- number -->
               <div class="">
-                <p class="card-title h2">29,007,631</p>
+                <p class="card-title h3">{{ productsCount | number }}</p>
                 <small class="card-text text-body-secondary">Product</small>
               </div>
             </div>
           </div>
           <!-- Stat...3 -->
-          <div class="col-12 col-md-6 mb-3">
-            <div
-              class="d-flex justify-content-center justify-content-md-start align-items-center gap-2 ms-2 ms-md-5"
-            >
+          <div class="col-6 mb-3">
+            <div class="d-flex align-items-center gap-2">
               <!-- icon -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -627,16 +623,14 @@
               </svg>
               <!-- number -->
               <div class="">
-                <p class="card-title h2">5,307</p>
+                <p class="card-title h3">{{ sellerCount | number }}</p>
                 <small class="card-text text-body-secondary">Seller</small>
               </div>
             </div>
           </div>
           <!-- Stat...4 -->
-          <div class="col-12 col-md-6 mb-3">
-            <div
-              class="d-flex justify-content-center justify-content-md-start align-items-center gap-2 ms-2 ms-md-5"
-            >
+          <div class="col-6 mb-3">
+            <div class="d-flex align-items-center gap-2">
               <!-- icon -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -652,7 +646,7 @@
               </svg>
               <!-- number -->
               <div class="">
-                <p class="card-title h2">10,364</p>
+                <p class="card-title h3">{{ brandsCount | number }}</p>
                 <small class="card-text text-body-secondary">Brand</small>
               </div>
             </div>
